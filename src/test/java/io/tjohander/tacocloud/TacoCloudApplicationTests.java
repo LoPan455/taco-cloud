@@ -29,4 +29,12 @@ class TacoCloudApplicationTests {
                 .andExpect(content().string(containsString("Welcome to...")));
     }
 
+    @Test
+    void testDesignContoller() throws Exception {
+        mockMvc.perform(get("/design"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("design"))
+                .andExpect(content().string(containsString("Design your taco!")));
+    }
+
 }
