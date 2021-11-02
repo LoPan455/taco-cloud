@@ -4,9 +4,14 @@ import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
 
 import javax.validation.constraints.NotBlank;
+import java.time.Instant;
 
 @Data
 public class Order {
+
+    private Long id;
+
+    private Instant placedAt;
 
     @NotBlank(message = "Name is Required")
     private String name;
