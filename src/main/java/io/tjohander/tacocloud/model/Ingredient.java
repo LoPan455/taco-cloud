@@ -12,18 +12,17 @@ import java.util.Objects;
 @Entity
 @Data
 @RequiredArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PUBLIC, force = true)
-@Getter
-@Setter
+//@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 public class Ingredient {
 
     @Id
-    private final String id;
+    @Getter
+    public final String id;
     private final String name;
 
     // Enums are "funny" with JPA... <Anger>
     @Enumerated(EnumType.STRING)
-    private final Type type;
+    private Type type;
 
     public static enum Type {
         CHEESE, PROTEIN, SAUCE, VEGGIES, WRAP
