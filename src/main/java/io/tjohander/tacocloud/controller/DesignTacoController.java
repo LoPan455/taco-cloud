@@ -63,7 +63,7 @@ public class DesignTacoController {
             Errors errors,
             @ModelAttribute Order order
     ) {
-        log.info("Processing taco design:" + taco);
+        log.info("Processing taco design: " + taco);
         if (errors.hasErrors()) {
             return "design";
         }
